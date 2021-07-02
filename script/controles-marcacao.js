@@ -2,7 +2,7 @@
 const visisbilidadeEl = document.querySelector('#visibilidade-das-marcacoes');
 let ancestralEl = document.querySelector('.foto-anotada');
 
-/** Nesse caso tanto input quanto change */
+/** Nesse caso tanto input quanto change seriam OK. */
 visisbilidadeEl.addEventListener('change', () => {
     ancestralEl.classList.toggle(`${visisbilidadeEl.value}`);
 });
@@ -12,7 +12,7 @@ const marcacaoEl = document.querySelectorAll('.marcacao');
 
 marcacaoEl.forEach(select => {
     select.addEventListener('click', (e) => {   
-        /** Jeito me */   
+        /** Jeito me - Talvez */   
         marcacaoEl[0].classList.toggle('selecionada')
         marcacaoEl[1].classList.toggle('selecionada')
       
@@ -56,7 +56,7 @@ marcacaoEl.forEach(select => {
 const allIpts = document.querySelectorAll('input[type="number"], input[type="text"], textarea, input[type="color"],input[type="radio"]');
 
 allIpts.forEach(input => {
-    /** Nesse caso input é melhor para atualizar instantaneamente. */
+    /** Nesse caso input é melhor pois, atualiza instantaneamente. */
     input.addEventListener('input', (e) => {
         let marcacaoSelecionadaEl = document.querySelector('.marcacao.selecionada');
 
@@ -88,10 +88,10 @@ allIpts.forEach(input => {
                 break
 
             /** Text-Area 3 */
-            default:  /** Os type radio não possuem Id. */
+            default:  /** Os types radio não possuem Id's. */
                 marcacaoSelecionadaEl.dataset.formato = e.currentTarget.value
                 
-                /** Maneira mais adequada, com toggle tem chances de adicionar as duas classes. */
+                /** Maneira mais adequada, com toggle tem chances de adicionar e remover as duas classes. */
                 if (e.currentTarget.value === 'formato-oval') {
                     marcacaoSelecionadaEl.classList.add('formato-oval')
                     marcacaoSelecionadaEl.classList.remove('formato-retangular')

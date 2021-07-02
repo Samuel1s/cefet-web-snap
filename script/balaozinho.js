@@ -5,7 +5,7 @@ let marcacoesEl = document.querySelectorAll('.marcacao');
 /* Não sei se é a maneira mais correta. */
 marcacoesEl.forEach(item => {
 
-    /* Criação das tags para o balanzinho. Aproveita o :empty */
+    /* Criação das tags para o balaozinho. Isso faz aproveitar a pseudo-class :empty */
     const create_h2 = document.createElement('h2');
     const create_p = document.createElement('p');
 
