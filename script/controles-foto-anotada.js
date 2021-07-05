@@ -5,3 +5,13 @@ const fotoEl = document.querySelector('.foto-anotada > img');
 filtroEl.addEventListener('change', () => {
     fotoEl.style.filter = filtroEl.value
 })
+
+/** Desafio */
+document.querySelector('#imagem').addEventListener('change', e => {
+    const imgEl = document.querySelector('.foto-anotada > img'); 
+    const fileReader = new FileReader();
+
+    fileReader.addEventListener('load', () => { imgEl.src = fileReader.result; });
+
+    fileReader.readAsDataURL(e.target.files[0]);
+});
